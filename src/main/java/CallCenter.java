@@ -5,7 +5,7 @@ public class CallCenter {
     private static final int CALLS = 60;
     private static final Queue<String> phoneCalls = new ArrayBlockingQueue<>(CALLS);
     private static final int PAUSE = 1000;
-    public static final int ANSWER = 3000;
+    public static final int ANSWER = 2000;
 
     public void call(){
         phoneCalls.offer(Thread.currentThread().getName());
@@ -24,7 +24,7 @@ public class CallCenter {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("Специалист " + Thread.currentThread().getName() + " ответил на звонок " + phoneCalls.poll());
+            System.out.println("Оператор " + Thread.currentThread().getName() + " взял звонок " + phoneCalls.poll());
         }
     }
 }
